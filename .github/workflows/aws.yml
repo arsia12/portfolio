@@ -18,14 +18,14 @@ jobs:
         - name: Build
           run: npm run build
 
-        # - name: Deploy
-        #   uses: reggionick/s3-deploy@v4
-        #   with:
-        #     folder: dist
-        #     bucket: ${{ secrets.bucket }}
-        #     bucket-region: ${{ secrets.region }}
-        #     dist-id: ${{ secrets.id }}
-        #     invalidation: /
-        #     delete-removed: true
-        #     no-cache: true
-        #     private: true
+        - name: Deploy
+          uses: reggionick/s3-deploy@v4
+          with:
+            folder: dist
+            bucket: ${{ secrets.bucket }}
+            bucket-region: ${{ secrets.region }}
+            dist-id: ${{ secrets.id }}
+            invalidation: /
+            delete-removed: true
+            no-cache: true
+            private: true
